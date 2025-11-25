@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios de Vendas - MilkMoo</title>
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="relatorio.css">
+</head>
+
+<body>
+    <div class="content-container">
+        <h1>Relatórios de Vendas</h1>
+
+        <section id="vendas-por-mes">
+            <h2>Vendas Totais por Mês</h2>
+            <button onclick="printReport('vendas-por-mes-table')">Imprimir Relatório</button>
+            <table id="vendas-por-mes-table">
+                <thead>
+                    <tr>
+                        <th>Mês/Ano</th>
+                        <th>Total de Vendas (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão inseridos aqui -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="produtos-mais-vendidos">
+            <h2>Top 10 Produtos Mais Vendidos</h2>
+            <button onclick="printReport('produtos-mais-vendidos-table')">Imprimir Relatório</button>
+            <table id="produtos-mais-vendidos-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade Vendida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão inseridos aqui -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="relatorio.js"></script>
+    <script>
+        function printReport(tableId) {
+            const printContent = document.getElementById(tableId).outerHTML;
+            const originalContent = document.body.innerHTML;
+            
+            document.body.innerHTML = `
+                <div style="padding: 20px;">
+                    <h1>Relatório MilkMoo</h1>
+                    ${printContent}
+                </div>
+            `;
+            
+            window.print();
+            
+            document.body.innerHTML = originalContent;
+            window.location.reload(); // Recarrega para restaurar o JS e eventos
+        }
+    </script>
+</body>
+
+</html>

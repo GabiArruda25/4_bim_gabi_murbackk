@@ -1,0 +1,95 @@
+/* Estilos específicos para o CRUD de Relatório */
+
+.content-container {
+    max-width: 900px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para o botão de impressão */
+button {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e06a8f;
+}
+
+/* Estilos para impressão */
+@media print {
+    body {
+        background: none;
+        color: #000;
+        font-size: 12pt;
+    }
+    .menu-container, footer, button {
+        display: none;
+    }
+    .content-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    table {
+        border: 1px solid #000;
+    }
+    table th, table td {
+        border: 1px solid #000;
+        padding: 5px;
+    }
+    table th {
+        background-color: #ccc !important;
+        -webkit-print-color-adjust: exact;
+        color: #000;
+    }
+    section {
+        border: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}

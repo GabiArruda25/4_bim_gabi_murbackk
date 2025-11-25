@@ -1,0 +1,89 @@
+/* Estilos específicos para o CRUD de Franquia */
+
+.content-container {
+    max-width: 800px;
+}
+
+#franquia-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+#franquia-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+#franquia-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#franquia-form button {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+#franquia-form button:hover {
+    background-color: #e06a8f;
+}
+
+#franquia-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#franquia-table th, #franquia-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#franquia-table th {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+}
+
+#franquia-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.action-buttons button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.action-buttons button.edit-btn {
+    background-color: #007bff;
+}
+
+.action-buttons button.delete-btn {
+    background-color: #dc3545;
+}
+
+.action-buttons button:hover {
+    opacity: 0.8;
+}

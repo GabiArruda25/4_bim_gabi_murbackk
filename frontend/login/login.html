@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MilkMoo - Login</title>
+  <!-- Reutiliza o CSS principal para o tema -->
+  <link rel="stylesheet" href="../menu.css"> 
+</head>
+
+<body>
+  <div class="login-form">
+    <h2>Login MilkMoo</h2>
+    <div id="loginFrame">
+        <input type="email" id="email" placeholder="Digite seu e-mail (Ex: cliente@milkmoo.com)" required />
+        <input type="password" id="senha" placeholder="Digite sua senha (Ex: cliente123)" required />
+        <button onclick="fazerLogin()">Entrar</button>
+        <p style="text-align: center; margin-top: 15px;">
+            <a href="#" onclick="alert('Funcionalidade de Cadastro não implementada neste projeto. Use as credenciais de exemplo.')">Cadastre-se</a>
+        </p>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE_URL = ''; // Rota relativa, o servidor Express cuidará do caminho
+
+    async function fazerLogin() {
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
+      if (!email || !senha) {
+          alert('Preencha o email e a senha.');
+          return;
+      }
+
+      try {
+        const response = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, senha })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          alert(`Login bem-sucedido! Bem-vindo(a), ${data.user.nome} (${data.user.role}).`);
+          // Redireciona para a página principal
+          window.location.href = '../menu.html'; 
+        } else {
+          alert(`Erro no login: ${data.error || 'Credenciais inválidas.'}`);
+        }
+      } catch (error) {
+        console.error('Erro ao comunicar com o servidor:', error);
+        alert('Erro de comunicação com o servidor. Verifique se o backend está rodando.');
+      }
+    }
+  </script>
+</body>
+
+</html>

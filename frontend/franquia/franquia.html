@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Franquias</title>
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="franquia.css">
+</head>
+
+<body>
+    <div class="content-container">
+        <h1>Gerenciamento de Franquias (CRUD 1:n)</h1>
+
+        <form id="franquia-form">
+            <input type="hidden" id="id_franquia">
+            <label for="nome_franquia">Nome da Franquia:</label>
+            <input type="text" id="nome_franquia" required>
+
+            <label for="endereco_franquia">Endereço:</label>
+            <input type="text" id="endereco_franquia">
+
+            <label for="telefone_franquia">Telefone:</label>
+            <input type="text" id="telefone_franquia">
+
+            <button type="submit" id="submit-btn">Salvar</button>
+            <button type="button" id="cancel-btn" style="display:none;">Cancelar Edição</button>
+        </form>
+
+        <h2>Lista de Franquias</h2>
+        <table id="franquia-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados serão inseridos aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="franquia.js"></script>
+</body>
+
+</html>
